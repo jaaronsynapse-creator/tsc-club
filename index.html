@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Social Club (TSC)</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Inter:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --primary-color: #1A202C;
+    --accent-color: #6366F1;
+    --bg-color: #F7FAFC;
+  }
+  body {
+    margin: 0; padding: 0; font-family: 'Inter', sans-serif; background-color: var(--bg-color); color: #1A202C;
+    line-height: 1.6;
+  }
+  header {
+    background: #111827; color: white; padding: 2rem 1rem; text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  header img.hero {
+    width: 100%; height: 40vh; object-fit: cover; opacity: 0.35;
+    position: absolute; top: 0; left: 0; z-index: 0;
+  }
+  header .overlay {
+    position: relative; z-index: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; height: 40vh;
+  }
+  header h1 {
+    font-size: 3rem; margin: 0; font-weight: 700;
+  }
+  header p.tagline {
+    font-size: 1.25rem; margin-top: 0.5rem;
+  }
+  section {
+    padding: 3rem 1rem; max-width: 900px; margin: 0 auto;
+  }
+  h2 {
+    font-size: 2rem; margin-bottom: 1rem;
+    text-align: center;
+    color: var(--accent-color);
+  }
+  .cards {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem;
+  }
+  .card {
+    background: white; border-radius: 1rem; box-shadow: 0 2px 8px rgba(0,0,0,0.05); padding: 1.5rem;
+  }
+  .card h3 { margin-top: 0; font-size: 1.5rem; color: var(--accent-color); }
+  .card p { margin-top: 0.5rem; }
+  footer {
+    background: #111827; color: white; text-align: center; padding: 1.5rem;
+  }
+  a.button {
+    display: inline-block; padding: 0.75rem 1.5rem; background: var(--accent-color); color: white; border-radius: 0.5rem; text-decoration: none; font-weight: 600; margin-top: 1rem;
+  }
+</style>
+</head>
+<body>
+<header>
+  <img src="b7bac213-5a57-4fdc-aaae-8f626a377f14.png" alt="Social Club Hero" class="hero"/>
+  <div class="overlay">
+    <h1>The Social Club</h1>
+    <p class="tagline">Meet. Connect. Belong.</p>
+  </div>
+</header>
+
+<section id="about">
+  <h2>What We're About</h2>
+  <p>
+    The Social Club (TSC) isn’t another boring club — it’s an <strong>experience hub</strong>.
+    We create spaces where students step out of their shells, try new things, and make real connections.
+    No pressure. No awkward icebreakers. Just good vibes and cool experiences.
+  </p>
+</section>
+
+<section id="why">
+  <h2>Why Join TSC?</h2>
+  <div class="cards">
+    <div class="card">
+      <h3>Connect with Everyone</h3>
+      <p>Meet people you’d never normally cross paths with and build genuine friendships.</p>
+    </div>
+    <div class="card">
+      <h3>Fresh Experiences</h3>
+      <p>Do fun, unexpected activities that make each meetup memorable — not your usual bingo stuff.</p>
+    </div>
+    <div class="card">
+      <h3>Build Confidence</h3>
+      <p>Grow socially in a natural, laid‑back way without feeling forced or judged.</p>
+    </div>
+    <div class="card">
+      <h3>Join a Movement</h3>
+      <p>Be part of something that feels more like a movement than a club — shake up campus life.</p>
+    </div>
+  </div>
+</section>
+
+<section id="what-we-do">
+  <h2>What We Do</h2>
+  <div class="cards">
+    <div class="card">
+      <h3>Experience Nights</h3>
+      <p>From silent discos to DIY escape rooms, we host events that feel like adventures.</p>
+    </div>
+    <div class="card">
+      <h3>Social Experiments</h3>
+      <p>Group missions that shake up campus life — compliment bombs, flash hangouts, unlikely pairings.</p>
+    </div>
+    <div class="card">
+      <h3>Creative Challenges</h3>
+      <p>Hot take debates, story swaps, mini film nights — unleash your creativity with friends.</p>
+    </div>
+    <div class="card">
+      <h3>Flash Hangouts</h3>
+      <p>Random pop-up events announced day-of, just for fun and spontaneity.</p>
+    </div>
+  </div>
+</section>
+
+<section id="join">
+  <h2>How to Join</h2>
+  <p>
+    1. Show up to a TSC event (you’ll hear about it on flyers, socials, and word of mouth).<br/>
+    2. Bring yourself (and maybe a friend).<br/>
+    3. Leave with a story to tell.
+  </p>
+  <p>
+    Stay tuned for event drops and updates. Follow us on social media or join our Discord for more details.
+  </p>
+  <p style="text-align: center;">
+    <a href="https://discord.gg/ekw2Aan6eP" class="button" target="_blank" rel="noopener">Join Our Discord</a>
+  </p>
+</section>
+
+<!-- QR Code Section -->
+<section id="qr">
+  <h2>Scan to Join Us</h2>
+  <p style="text-align:center;">
+    <!-- The QR code will be generated dynamically based on the current page URL. -->
+    <img id="qr-code" src="" alt="Site QR code" style="max-width:200px;" />
+  </p>
+  <p style="text-align:center;">Scan this QR code to jump straight to this website!</p>
+  <script>
+    // Generate a QR code for the current page URL using api.qrserver.com
+    (function() {
+      var currentUrl = window.location.href;
+      var qrImg = document.getElementById('qr-code');
+      var encodedUrl = encodeURIComponent(currentUrl);
+      qrImg.src = 'https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=' + encodedUrl;
+    })();
+  </script>
+</section>
+
+<section id="vibe">
+  <h2>Our Vibe</h2>
+  <p>
+    We’re not about “mandatory fun.”<br/>
+    We’re about doing things that actually feel fresh, keeping it casual yet meaningful, and making campus life feel less boring and more connected.
+  </p>
+</section>
+
+<footer>
+  <p>&copy; 2025 The Social Club (TSC). All rights reserved.</p>
+</footer>
+</body>
+</html>
