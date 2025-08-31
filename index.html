@@ -55,6 +55,27 @@
   a.button {
     display: inline-block; padding: 0.75rem 1.5rem; background: var(--accent-color); color: white; border-radius: 0.5rem; text-decoration: none; font-weight: 600; margin-top: 1rem;
   }
+
+  /* QR styles */
+  .qr-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+  .qr-card {
+    background: white;
+    border-radius: 1rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    padding: 1.5rem;
+    text-align: center;
+    max-width: 280px;
+  }
+  .qr-card h3 {
+    color: var(--accent-color);
+    margin-bottom: 1rem;
+  }
 </style>
 </head>
 <body>
@@ -88,7 +109,7 @@
     </div>
     <div class="card">
       <h3>Build Confidence</h3>
-      <p>Grow socially in a natural, laid‑back way without feeling forced or judged.</p>
+      <p>Grow socially in a natural, laid-back way without feeling forced or judged.</p>
     </div>
     <div class="card">
       <h3>Join a Movement</h3>
@@ -136,14 +157,29 @@
 
 <!-- QR Code Section -->
 <section id="qr">
-  <h2>Scan to Join Us</h2>
-  <p style="text-align:center;">
-    <!-- The QR code will be generated dynamically based on the current page URL. -->
-    <img id="qr-code" src="" alt="Site QR code" style="max-width:200px;" />
-  </p>
-  <p style="text-align:center;">Scan this QR code to jump straight to this website!</p>
+  <h2>Stay Connected</h2>
+  <div class="qr-container">
+    <!-- Site QR -->
+    <div class="qr-card">
+      <h3>Scan to Join Us</h3>
+      <img id="qr-code" src="" alt="Site QR code" style="max-width:200px;" />
+      <p>Scan this QR code to jump straight to this website!</p>
+    </div>
+
+    <!-- Questionnaire QR -->
+    <div class="qr-card">
+      <h3>Scan here to take our questionnaire!</h3>
+      <img 
+        src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=https%3A%2F%2Fdocs.google.com%2Fforms%2Fd%2Fe%2F1FAIpQLSf0S6ucrb481Dxj_aWboJnHlzZpDRRqvu3sI2_PveBcn8IerA%2Fviewform" 
+        alt="Questionnaire QR code" 
+        style="max-width:200px;" 
+      />
+      <p>Scan this QR code to fill out our questionnaire.</p>
+    </div>
+  </div>
+
   <script>
-    // Generate a QR code for the current page URL using api.qrserver.com
+    // Generate a QR code for the current page URL dynamically
     (function() {
       var currentUrl = window.location.href;
       var qrImg = document.getElementById('qr-code');
